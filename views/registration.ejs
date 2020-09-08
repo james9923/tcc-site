@@ -1,0 +1,48 @@
+
+	
+
+	<%- include("partials/header"); %>
+	<%- include("partials/array"); %>
+
+		<h2>Registration Page</h2>
+		<p>Please fill the form fields below</p>
+
+		<form action="/register" method="post">
+			
+			<p>Firstname: <input type="text" name="fname"/></p>
+			<p>Lastname: <input type="text" name="lname"/></p>
+			<p>Gender: Male <input type="radio" name="sex" value="Male"/>
+			           Female <input type="radio" name="sex" value="Female"/>
+
+			</p>
+
+			<p>State of Origin: <select name="state">
+									<option value="">Select State of Origin</option>
+<% let origin = ["Ogun", "Lagos", "Osun", "Jigawa", "Niger", "Rivers", "Imo", "Abia"]; %>
+
+									<% origin.forEach(function(states){ %>
+
+									<option value="<%= states %>"><%= states %></option>
+
+									<% }) %>
+
+								</select>
+			</p>
+			<p>Department: <select name="dept">
+							<option value="">Select Department</option>
+<%	let department = ["Marketing", "Sales", "Communications", "Finance", "Operations", "HR" ]; %>
+			   				<% department.forEach(function(departments){ %>
+			  				<option value="<%= departments %>"><%= departments %></option>
+			  
+			  				<% }) %>
+
+						</select> 
+
+					</p>
+			<button type="submit">Click to Submit</button>
+
+
+		</form>
+
+
+	<%- include("partials/footer"); %>

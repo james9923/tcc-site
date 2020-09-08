@@ -1,0 +1,23 @@
+
+	<%- include('partials/header') %>
+
+			<h2>Member Records</h2>
+
+			<table border="1">
+				<tr>
+					<th>Name</th><th>Gender</th><th>State of Origin</th><th>Department</th>
+				</tr>
+				<tr>
+					<% result.forEach(function(results){ %>
+					<td><%= results.fname+' '+results.lname %></td>
+					<td><%= results.sex %></td>
+					<td><%= results.state %></td>
+					<td><%= results.dept %></td>
+					</tr>
+					
+					<% }) %>
+				
+			</table>
+
+
+	<%- include('partials/footer') %>
